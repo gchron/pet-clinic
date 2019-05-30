@@ -4,8 +4,7 @@ import com.myjetbrains.cronix.petclinic.model.Owner;
 import com.myjetbrains.cronix.petclinic.model.Vet;
 import com.myjetbrains.cronix.petclinic.services.OwnerService;
 import com.myjetbrains.cronix.petclinic.services.VetService;
-import com.myjetbrains.cronix.petclinic.services.map.OwnerServiceMap;
-import com.myjetbrains.cronix.petclinic.services.map.VetServiceMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +14,10 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        this.ownerService = new OwnerServiceMap();
-        this.vetService = new VetServiceMap();
+    @Autowired
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
@@ -26,16 +26,23 @@ public class DataLoader implements CommandLineRunner {
         owner1.setId(1L);
         owner1.setFirstName("Max");
         owner1.setLastName("Kolonko");
-
         ownerService.save(owner1);
+
         Owner owner2 = new Owner();
-        owner1.setId(2L);
-        owner1.setFirstName("Clyde");
-        owner1.setLastName("Mi");
+        owner2.setId(2L);
+        owner2.setFirstName("Clyde");
+        owner2.setLastName("Mi");
 
         ownerService.save(owner2);
-        System.out.println("Loaded owners ....");
 
+        Owner owner3 = new Owner();
+        owner3.setId(3L);
+        owner3.setFirstName("Arya");
+        owner3.setLastName("stark");
+
+        ownerService.save(owner3);
+
+        System.out.println("Loaded owners ....");
 
         Vet vet1 = new Vet();
         vet1.setId(1L);

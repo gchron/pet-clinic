@@ -2,9 +2,10 @@ package com.myjetbrains.cronix.petclinic.services.map;
 
 import com.myjetbrains.cronix.petclinic.model.Vet;
 import com.myjetbrains.cronix.petclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
