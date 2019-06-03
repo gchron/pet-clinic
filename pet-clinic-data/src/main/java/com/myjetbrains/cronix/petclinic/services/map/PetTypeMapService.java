@@ -2,9 +2,11 @@ package com.myjetbrains.cronix.petclinic.services.map;
 
 import com.myjetbrains.cronix.petclinic.model.PetType;
 import com.myjetbrains.cronix.petclinic.services.PetTypeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
     @Override
     public Set<PetType> findAll() {
