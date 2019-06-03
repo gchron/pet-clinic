@@ -1,11 +1,12 @@
 package com.myjetbrains.cronix.petclinic.services.map;
 
 import com.myjetbrains.cronix.petclinic.model.Speciality;
-import com.myjetbrains.cronix.petclinic.services.SpecializationService;
+import com.myjetbrains.cronix.petclinic.services.SpecialityService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
-public class SpecializationMapService extends AbstractMapService<Speciality, Long> implements SpecializationService {
+@Service
+public class SpecializationMapService extends AbstractMapService<Speciality, Long> implements SpecialityService {
     @Override
     public Set<Speciality> findAll() {
         return super.findAll();
