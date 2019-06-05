@@ -1,6 +1,5 @@
 package com.myjetbrains.cronix.petclinic.services.springdatajpa;
 
-import com.myjetbrains.cronix.petclinic.model.PetType;
 import com.myjetbrains.cronix.petclinic.repositories.PetTypeRepository;
 import com.myjetbrains.cronix.petclinic.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
@@ -20,24 +19,24 @@ public class PetTypeSDJpaService implements PetTypeService {
     }
 
     @Override
-    public Set<PetType> findAll() {
-        Set<PetType> types = new HashSet<>();
+    public Set<com.myjetbrains.cronix.petclinic.model.PetType> findAll() {
+        Set<com.myjetbrains.cronix.petclinic.model.PetType> types = new HashSet<>();
         petTypeRepository.findAll().forEach(t -> types.add(t));
         return types;
     }
 
     @Override
-    public PetType findById(Long aLong) {
+    public com.myjetbrains.cronix.petclinic.model.PetType findById(Long aLong) {
         return petTypeRepository.findById(aLong).orElse(null);
     }
 
     @Override
-    public PetType save(PetType object) {
+    public com.myjetbrains.cronix.petclinic.model.PetType save(com.myjetbrains.cronix.petclinic.model.PetType object) {
         return petTypeRepository.save(object);
     }
 
     @Override
-    public void delete(PetType object) {
+    public void delete(com.myjetbrains.cronix.petclinic.model.PetType object) {
         petTypeRepository.delete(object);
     }
 

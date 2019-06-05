@@ -1,15 +1,14 @@
 package com.myjetbrains.cronix.petclinic.services.map;
 
-import com.myjetbrains.cronix.petclinic.model.PetType;
 import com.myjetbrains.cronix.petclinic.services.PetTypeService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
+public class PetTypeMapService extends AbstractMapService<com.myjetbrains.cronix.petclinic.model.PetType, Long> implements PetTypeService {
     @Override
-    public Set<PetType> findAll() {
+    public Set<com.myjetbrains.cronix.petclinic.model.PetType> findAll() {
         return super.findAll();
     }
 
@@ -19,17 +18,17 @@ public class PetTypeMapService extends AbstractMapService<PetType, Long> impleme
     }
 
     @Override
-    public void delete(PetType object) {
+    public void delete(com.myjetbrains.cronix.petclinic.model.PetType object) {
         super.delete(object);
     }
 
     @Override
-    public PetType save(PetType object) {
+    public com.myjetbrains.cronix.petclinic.model.PetType save(com.myjetbrains.cronix.petclinic.model.PetType object) {
         return super.save(object);
     }
 
     @Override
-    public PetType findById(Long id) {
+    public com.myjetbrains.cronix.petclinic.model.PetType findById(Long id) {
         return super.findById(id);
     }
 }

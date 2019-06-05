@@ -1,6 +1,9 @@
 package com.myjetbrains.cronix.petclinic.bootstrap;
 
-import com.myjetbrains.cronix.petclinic.model.*;
+import com.myjetbrains.cronix.petclinic.model.Owner;
+import com.myjetbrains.cronix.petclinic.model.Pet;
+import com.myjetbrains.cronix.petclinic.model.Speciality;
+import com.myjetbrains.cronix.petclinic.model.Vet;
 import com.myjetbrains.cronix.petclinic.services.OwnerService;
 import com.myjetbrains.cronix.petclinic.services.PetTypeService;
 import com.myjetbrains.cronix.petclinic.services.SpecialityService;
@@ -50,13 +53,13 @@ public class DataLoader implements CommandLineRunner {
         dentist.setDesc("Dentistry");
         Speciality savedDentistry = specialityService.save(dentist);
 
-        PetType dog = new PetType();
+        com.myjetbrains.cronix.petclinic.model.PetType dog = new com.myjetbrains.cronix.petclinic.model.PetType();
         dog.setName("dog");
-        PetType saveDogPetType = petTypeService.save(dog);
+        com.myjetbrains.cronix.petclinic.model.PetType saveDogPetType = petTypeService.save(dog);
 
-        PetType cat = new PetType();
+        com.myjetbrains.cronix.petclinic.model.PetType cat = new com.myjetbrains.cronix.petclinic.model.PetType();
         cat.setName("Cat");
-        PetType saveCatPetType = petTypeService.save(cat);
+        com.myjetbrains.cronix.petclinic.model.PetType saveCatPetType = petTypeService.save(cat);
 
         System.out.println("Loaded petTypes ....");
 
