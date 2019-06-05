@@ -1,13 +1,24 @@
 package com.myjetbrains.cronix.petclinic.model;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "owners")
 public class Owner extends Person {
 
+    @Column(name = "adress")
     private String address;
+
+    @Column(name = "city")
     private String city;
+
+    @Column(name = "phone_number")
     private String telephone;
+
+    @Column(name = "pets")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
     public String getAddress() {

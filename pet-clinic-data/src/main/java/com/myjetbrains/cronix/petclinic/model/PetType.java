@@ -1,13 +1,21 @@
 package com.myjetbrains.cronix.petclinic.model;
 
-public class PetType extends BaseEntity {
-    private String petType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-    public String getPetType() {
-        return petType;
+@Entity
+@Table(name = "types")
+public class PetType extends BaseEntity {
+
+    @Column(name = "name")
+    private String name;
+
+    public String getName() {
+        return name;
     }
 
-    public void setPetType(String petType) {
-        this.petType = petType;
+    public void setName(String name) {
+        this.name = name;
     }
 }
