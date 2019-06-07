@@ -37,6 +37,13 @@
             </plugin>
         </plugins>
     </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
     <scm>
         <developerConnection>scm:git:https://github.com/gchron/pet-clinic.git</developerConnection>
       <tag>pet-clinic-0.0.1</tag>
